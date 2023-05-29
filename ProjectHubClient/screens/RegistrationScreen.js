@@ -1,5 +1,10 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text , TextInput, Button} from 'react-native';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
+
+
 
 const RegistrationScreen = ({ navigation }) => {
     const [firstName, setFirstName] = useState('');
@@ -18,7 +23,7 @@ const RegistrationScreen = ({ navigation }) => {
           };
       
           // Send an HTTP POST request to the server's registration endpoint
-          const response = await axios.post('https:////localhost:8080/api/users/register', userData);
+          const response = await axios.post('https://localhost:8080/api/users/register', userData);
       
           // Handle the response from the server
           if (response.status === 200) {
